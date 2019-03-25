@@ -1,0 +1,76 @@
+<!-- <p>
+  students works!
+</p> -->
+<app-menu></app-menu>
+
+<!-- <h2>My Students</h2> -->
+ <!-- <ul class="students">
+  <li *ngFor="let Student of Students"
+    [class.selected]="Student === selectedStudent"
+    (click)="onSelect(Student)">
+    <span class="badge">{{Student.id}}</span> {{Student.name}}<span> {{Student.class}} </span><span> {{Student.subject}} </span><span>{{Student.schoolname}}</span>
+     <button type="button" class="close" aria-label="Close"  (click)=cancelButton(student) > <span aria-hidden="true" >&times;</span>
+     </button> 
+  </li>
+ 
+</ul>  --> 
+
+<h2>My Students</h2>
+<div id="customers">
+<thead>
+<th>Student Id</th>
+<th>Student Name</th>
+<th>Student Class</th>
+<th>Student Subject</th>
+<th>Student Schoolname</th>
+</thead>
+
+<tbody *ngFor="let Student of Students" [class.selected]="Student === selectedStudent" (click)="onSelect(Student)">
+
+  <th>{{Student.id}}</th>
+<th>{{Student.name}}</th>
+<th>{{Student.class}}</th>
+<th>{{Student.subject}}</th>
+<th>{{Student.schoolname}}</th>
+
+
+
+</tbody>
+</div>
+
+
+<div>
+  <input type="text" [(ngModel)]="Student.name" placeholder="StudentName" > <br><br>
+  <input type="text" [(ngModel)]="Student.class" placeholder="Studentclass" > <br><br>
+  
+  <input type="text" [(ngModel)]="Student.subject" placeholder="Subject" > <br><br>
+  <input type="text" [(ngModel)]="Student.schoolname" placeholder="Schoolname" > <br><br>
+  <button (click)="addStudent()" >Add Student</button>
+
+</div>
+
+
+
+
+
+<div>
+  <input type="text" name="StudentName" placeholder="remove Student" [(ngModel)]="num"> <br><br>
+<button (click)="removeStudent(num)" type="" >Remove Student</button>
+
+</div>
+
+
+<div *ngIf="selectedStudent">
+
+  <h2>{{selectedStudent.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedStudent.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedStudent.name" placeholder="name">
+      <input [(ngModel)]="selectedStudent.class" placeholder="class">
+      <input [(ngModel)]="selectedStudent.subject" placeholder="subject">
+      <input [(ngModel)]="selectedStudent.schoolname" placeholder="schoolname">
+    </label>
+  </div>
+
+</div>

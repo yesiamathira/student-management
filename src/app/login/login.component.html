@@ -1,0 +1,14 @@
+<!-- <p>
+  login works!
+</p> -->
+<app-menu></app-menu>
+  <div style="text-align:center">
+    <h1>
+      {{ title }}!
+    </h1>
+    <hr>
+    <input type="text" placeholder="username" name="" [(ngModel)]="data.username"> <br/><br/>
+    <input type="password" placeholder="password" name="" [(ngModel)]="data.password"> <br/><br/>
+    <input type="button" class="button" (click)="onLogin()" name="" value="Login">
+   
+  </div>
